@@ -3,12 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/components/scrollspy/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
-    {% for post in post_list %}
-    <h2> {{ post.url }} </h2>
-        {{ post.nom }} le {{ post.date }}
-    <p> {{ post.nb_telechargement }} </p>
-    {% endfor %}
+
+    <div class="container mt-5" margin-top="15dp">
+        <div class="container">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col lg-3">
+                    <div class="card text-white bg-success" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"> {{ post.nom }} </h5>
+                            {% load static %}
+                            <img src="{% static post.url %}" alt="My image">
+
+                            <h5 class="card-title">Date</h5>
+                            <p class="card-text"> {{ post.date }}</p>
+
+                            <h5 class="card-title">Télechargé</h5>
+                            <p class="card-text"> {{ post.nb_telechargement }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
