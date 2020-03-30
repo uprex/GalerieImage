@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for post in post_list %}
+    <h2> {{ post.url }} </h2>
+        {{ post.nom }} le {{ post.date }}
+    <p> {{ post.nb_telechargement }} </p>
+    {% endfor %}
+</body>
+</html>
