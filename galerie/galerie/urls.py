@@ -19,5 +19,6 @@ from galerie_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('galerie/', views.index, name="index")
+    path('galerie/', views.index, name="index"),
+    path('veille/', views.veille, name="veille")
 ]

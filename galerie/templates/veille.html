@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href ="{% static 'css/style.css' %}">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/components/scrollspy/">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
 </head>
 <body>
@@ -39,44 +42,16 @@
         </nav>
 
     <div class="container mt-5" margin-top="15dp">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col lg-3">
-                    <div class="card text-white bg-success" style="width: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"> {{ post.nom }} </h5>
-                            {% load static %}
-                            <img src="{% static post.url %}" alt="My image">
-
-                            <h5 class="card-title">Date</h5>
-                            <p class="card-text"> {{ post.date }}</p>
-
-                            <h5 class="card-title">Télechargé</h5>
-                            <p class="card-text"> {{ post.nb_telechargement }}</p>
-                             <button type="submit" value="Download" onclick="location.href='{% static post.url %}'" name='mybtn2'>Download image</button>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+        <div class="contenu_carou_auto">
+            <div class="caroussel-image">
+            {% for post in post_list %}
+                 {% load static %}
+                <img src="{% static post.url %}" alt="My image">
+            {% endfor %}
             </div>
+        </div>
     </div>
 </body>
 
-<script type="text/javascript">
-     I = 1 ;
-     Imax = document.images.length - 1 ;
-     setTimeout(suivante, 2000) ;
-
-     function suivante()
-     {
-     document.images[I].style.display = "none" ;
-     if ( I < Imax )
-          I++;
-     else
-          I=1;
-     document.images[I].style.display = "block";
-     setTimeout(suivante, 2000) ;
-     }
-</script>
 
 </html>

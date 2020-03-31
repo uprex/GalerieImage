@@ -9,3 +9,8 @@ from django.http import HttpResponse
 def index(request):
     post_list = Post.object.all()
     return render(request, "index.html", {'post_list': post_list})
+
+def veille(request):
+    post_list = Post.object.all()
+    return render(request, "veille.html", {'post_list': post_list})
+
