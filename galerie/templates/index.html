@@ -38,45 +38,27 @@
             </div>
         </nav>
 
-    <div class="container mt-5" margin-top="15dp">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col lg-3">
-                    <div class="card text-white bg-success" style="width: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"> {{ post.nom }} </h5>
-                            {% load static %}
-                            <img src="{% static post.url %}" alt="My image">
+    <div class="m-5" >
+        <div class="row">
+            {% for post in post_list %}
+            <div class="col lg-3">
+                <div class="card text-white bg-success" style="width: 20rem;">
+                    {% load static %}
+                    <img class="card-img-top" src="{% static post.url %}" alt="My image" style="max-width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ post.nom }} </h5>
+                        <p class="card-text"> {{ post.date }}</p>
 
-                            <h5 class="card-title">Date</h5>
-                            <p class="card-text"> {{ post.date }}</p>
+                        <h5 class="card-title">Télechargé</h5>
+                        <p class="card-text"> {{ post.nb_telechargement }}</p>
+                        {{ post.image.url }}
+                        <button type="submit" value="downloadImage" onclick="{{ post.image.url }}">Download image</button>
 
-                            <h5 class="card-title">Télechargé</h5>
-                            <p class="card-text"> {{ post.nb_telechargement }}</p>
-                             <button type="submit" value="Download" onclick="location.href='{% static post.url %}'" name='mybtn2'>Download image</button>
-                        </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
-
-<script type="text/javascript">
-     I = 1 ;
-     Imax = document.images.length - 1 ;
-     setTimeout(suivante, 2000) ;
-
-     function suivante()
-     {
-     document.images[I].style.display = "none" ;
-     if ( I < Imax )
-          I++;
-     else
-          I=1;
-     document.images[I].style.display = "block";
-     setTimeout(suivante, 2000) ;
-     }
-</script>
-
 </html>
