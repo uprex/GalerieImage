@@ -25,7 +25,7 @@ SECRET_KEY = '7o%$bmmfr&#ua0)7f!@n1=3efjk)xbhi*c!4crx1$1u-u(skmg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['20.43.58.95']
 
 
 # Application definition
@@ -90,6 +90,8 @@ DATABASES = {
     }
 }
 
+#127.0.0.1
+#3308
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -128,3 +130,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
