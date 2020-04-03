@@ -52,8 +52,10 @@
                         <h5 class="card-title">Télechargé</h5>
                         <p class="card-text"> {{ post.nb_telechargement }}</p>
                         {{ post.image.url }}
-                        <button type="submit" value="downloadImage" onclick="{{ post.image.url }}">Download image</button>
-
+                        <button type="submit" value="downloadImage" onclick="{{ post.image.url }}">
+                            {% load static %}
+                            <a href="{% static post.url %}" download="{{ post.url }}">Download image</a>
+                        </button>
                     </div>
                 </div>
             </div>

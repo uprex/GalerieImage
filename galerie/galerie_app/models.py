@@ -8,6 +8,7 @@ class Post(models.Model):
     nom = models.CharField(max_length=150)
     date = models.DateTimeField()
     nb_telechargement = models.IntegerField()
+    img_file = models.FileField(upload_to="../static/")
 
     object = models.Manager()
 
