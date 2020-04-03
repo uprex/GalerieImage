@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7o%$bmmfr&#ua0)7f!@n1=3efjk)xbhi*c!4crx1$1u-u(skmg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['20.43.58.95', '127.0.0.1', 'galerieimage.herokuapp.com']
 
